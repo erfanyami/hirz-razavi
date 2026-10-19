@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>پروپوزال حرز رضوی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --teal-900:#0B3F44; --teal-800:#0F5259; --teal-700:#14666E; --teal-500:#2A8A91; --teal-100:#E3F0EF; --teal-50:#F1F7F6;
+  --gold-700:#8E6A2C; --gold-500:#B68A3E; --gold-300:#D9BE85; --gold-100:#F4EBD6;
+  --ivory:#FBF8F1; --paper:#FFFFFF; --ink:#1E2A2C; --ink-2:#3F4D50; --muted:#6B787A; --line:#E6DFCF;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:"Vazirmatn",Tahoma,sans-serif;font-size:15.5px;line-height:1.9;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+
+/* ---------- layout ---------- */
+.layout{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+aside{position:sticky;top:0;height:100vh;background:var(--teal-900);color:#E8EFEE;display:flex;flex-direction:column;overflow:hidden}
+aside::before{content:"";position:absolute;inset:0;background-image:var(--star-pattern);background-size:56px 56px;opacity:.07;pointer-events:none}
+.side-inner{position:relative;display:flex;flex-direction:column;height:100%;padding:26px 22px}
+.logo-card{background:#fff;border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:center;gap:10px}
+.logo-card img{height:40px;width:auto;display:block}
+.side-client{margin:20px 2px 6px;font-size:12.5px;color:var(--gold-300);letter-spacing:.2px}
+.side-title{margin:0 2px 18px;font-weight:700;font-size:17px;line-height:1.6;color:#fff}
+.side-rule{height:14px;margin:0 0 14px;background:var(--rule-gold) center/auto 14px repeat-x;opacity:.75}
+nav ol{list-style:none;margin:0;padding:0;counter-reset:n;overflow:auto;flex:1}
+nav li{counter-increment:n}
+nav a{display:flex;gap:10px;align-items:center;text-decoration:none;padding:7px 10px;border-radius:9px;font-size:13.8px;color:#C9D8D7;transition:background .2s,color .2s}
+nav a::before{content:counter(n, persian);min-width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;border:1px solid rgba(217,190,133,.35);color:var(--gold-300)}
+nav a:hover{background:rgba(255,255,255,.06);color:#fff}
+nav a.active{background:rgba(217,190,133,.14);color:#fff}
+nav a.active::before{background:var(--gold-500);border-color:var(--gold-500);color:var(--teal-900)}
+.side-foot{margin-top:14px;font-size:12px;color:#9FB6B5;border-top:1px solid rgba(255,255,255,.08);padding-top:12px;line-height:1.8}
+
+main{min-width:0}
+.wrap{max-width:960px;margin:0 auto;padding:0 40px 80px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:linear-gradient(180deg,var(--teal-50),var(--ivory));border-bottom:1px solid var(--line);overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:var(--star-pattern-teal);background-size:64px 64px;opacity:.05;pointer-events:none}
+.hero .wrap{position:relative;padding-top:52px;padding-bottom:46px;z-index:1}
+.bismillah{font-family:"Amiri",serif;font-size:22px;color:var(--teal-700);text-align:center;margin:0 0 30px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:500;color:var(--gold-700);background:var(--gold-100);border:1px solid #EADBB6;padding:3px 12px;border-radius:999px}
+h1{font-size:34px;line-height:1.5;margin:16px 0 8px;color:var(--teal-900);font-weight:800}
+.hero p.lead{font-size:17px;color:var(--ink-2);margin:0;max-width:640px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-size:13.5px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+.verse{margin-top:30px;display:flex;align-items:center;gap:14px;color:var(--teal-700)}
+.verse .ar{font-family:"Amiri",serif;font-size:21px}
+.verse small{color:var(--muted);font-size:12px}
+.boteh{position:absolute;width:150px;opacity:.13;color:var(--gold-500);z-index:0}
+.boteh.b1{left:28px;top:30px;transform:rotate(-18deg)}
+.boteh.b2{left:150px;top:120px;width:90px;transform:rotate(160deg);opacity:.09}
+
+/* ---------- sections ---------- */
+section{padding-top:56px;scroll-margin-top:12px}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.sec-num{flex:none;width:40px;height:40px;display:grid;place-items:center;color:var(--teal-800);font-weight:700;font-size:15px;position:relative}
+.sec-num svg{position:absolute;inset:0;width:100%;height:100%;color:var(--gold-500)}
+.sec-num span{position:relative}
+h2{font-size:23px;margin:0;color:var(--teal-900);font-weight:800}
+h3{font-size:17px;margin:26px 0 8px;color:var(--teal-800)}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;position:relative;overflow:hidden}
+.stat .v{font-size:24px;font-weight:800;color:var(--teal-800);line-height:1.4}
+.stat .l{font-size:13px;color:var(--ink-2)}
+.stat .s{font-size:11px;color:var(--muted);margin-top:4px}
+.stat::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:var(--gold-500)}
+
+.tag{display:inline-block;font-size:11.5px;font-weight:600;padding:1px 9px;border-radius:999px;vertical-align:middle;white-space:nowrap}
+.t-ver{background:var(--teal-100);color:var(--teal-800)}
+.t-inf{background:#EEF0F6;color:#3D4A72}
+.t-rec{background:var(--gold-100);color:var(--gold-700)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12.5px;color:var(--muted);margin:4px 0 6px}
+
+ul.clean{list-style:none;margin:0;padding:0}
+ul.clean li{position:relative;padding-inline-start:22px;margin:6px 0}
+ul.clean li::before{content:"";position:absolute;inset-inline-start:2px;top:.8em;width:8px;height:8px;background:var(--gold-500);transform:rotate(45deg)}
+
+/* table */
+.tbl{width:100%;border-collapse:separate;border-spacing:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:14px}
+.tbl th{background:var(--teal-800);color:#fff;font-weight:600;text-align:start;padding:11px 14px;font-size:13px}
+.tbl td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
+.tbl tr:nth-child(even) td{background:#FDFBF6}
+.tbl-scroll{overflow-x:auto;border-radius:var(--radius)}
+.pri{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;font-weight:800;font-size:13px}
+.pA{background:var(--teal-800);color:#fff}.pB{background:var(--teal-100);color:var(--teal-800)}.pC{background:var(--gold-100);color:var(--gold-700)}
+
+/* funnel */
+.funnel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:8px}
+.fstep{position:relative;padding:20px 22px 22px;background:var(--paper);border:1px solid var(--line)}
+.fstep:first-child{border-radius:0 var(--radius) var(--radius) 0}
+.fstep:last-child{border-radius:var(--radius) 0 0 var(--radius)}
+.fstep+.fstep{border-inline-start:none}
+.fstep .k{font-size:12px;color:var(--gold-700);font-weight:600}
+.fstep h4{margin:2px 0 8px;font-size:17px;color:var(--teal-900)}
+.fstep .ch{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:12px;background:var(--teal-50);border:1px solid #D5E7E5;color:var(--teal-800);padding:2px 10px;border-radius:999px}
+.fstep:not(:last-child)::after{content:"";position:absolute;inset-inline-end:-11px;top:50%;width:20px;height:20px;background:var(--gold-500);transform:translateY(-50%) rotate(45deg);z-index:2;border:3px solid var(--ivory)}
+.f1{border-top:4px solid var(--teal-500)!important}.f2{border-top:4px solid var(--teal-700)!important}.f3{border-top:4px solid var(--gold-500)!important}
+
+/* allocation */
+.alloc{display:flex;flex-direction:column;gap:12px}
+.arow{display:grid;grid-template-columns:200px minmax(0,1fr) 92px;gap:14px;align-items:center}
+.arow .n{font-weight:600;font-size:14.5px}
+.arow .n small{display:block;font-weight:400;color:var(--muted);font-size:12px;line-height:1.5}
+.bar{height:14px;background:#EFEADF;border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:999px}
+.arow .amt{font-weight:700;color:var(--teal-900);text-align:end;font-size:14.5px}
+.arow .amt small{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.split{display:flex;height:40px;border-radius:12px;overflow:hidden;margin:4px 0 18px;font-size:13px;font-weight:600;color:#fff}
+.split div{display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* scenarios */
+.scen{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column}
+.scen.rec{border:2px solid var(--teal-700);box-shadow:0 10px 30px -18px rgba(11,63,68,.45)}
+.scen .badge{align-self:flex-start;font-size:11.5px;font-weight:700;background:var(--teal-700);color:#fff;padding:2px 10px;border-radius:999px;margin-bottom:8px}
+.scen h4{margin:0;font-size:18px;color:var(--teal-900)}
+.scen .bud{font-size:26px;font-weight:800;color:var(--gold-700);margin:6px 0 2px}
+.scen .bud small{font-size:13px;font-weight:500;color:var(--muted)}
+.scen dl{margin:12px 0 0;font-size:13.5px}
+.scen dt{color:var(--muted);font-size:12px;margin-top:10px}
+.scen dd{margin:0}
+
+/* timeline */
+.tl{position:relative;padding-inline-start:30px}
+.tl::before{content:"";position:absolute;inset-inline-start:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--teal-500),var(--gold-500))}
+.tli{position:relative;margin-bottom:18px}
+.tli::before{content:"";position:absolute;inset-inline-start:-27px;top:8px;width:14px;height:14px;background:var(--paper);border:3px solid var(--teal-700);transform:rotate(45deg)}
+.tli .w{font-size:12.5px;color:var(--gold-700);font-weight:700}
+.tli h4{margin:0 0 2px;font-size:15.5px;color:var(--teal-900)}
+.tli p{margin:0;color:var(--ink-2);font-size:14px}
+
+.note{background:var(--teal-50);border:1px solid #D5E7E5;border-inline-start:4px solid var(--teal-700);border-radius:10px;padding:14px 18px;font-size:14px;color:var(--ink-2)}
+.note.gold{background:#FBF5E7;border-color:#EEDFBC;border-inline-start-color:var(--gold-500)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;background:#F3EFE5;padding:1px 6px;border-radius:5px;direction:ltr;unicode-bidi:embed;word-break:break-all;display:inline-block;max-width:100%}
+.steps{counter-reset:s;display:grid;gap:10px}
+.steps .st{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.steps .st::before{counter-increment:s;content:counter(s, persian);width:32px;height:32px;display:grid;place-items:center;border-radius:9px;background:var(--teal-800);color:#fff;font-weight:700}
+.steps b{color:var(--teal-900)}
+.steps .st>div{min-width:0}
+
+.closing{margin-top:60px;text-align:center;padding:36px 20px;border-top:1px solid var(--line);color:var(--teal-800)}
+.closing .ornament{width:220px;height:22px;margin:0 auto 14px;background:var(--rule-gold) center/auto 22px repeat-x;opacity:.8}
+.closing p{font-size:16px;margin:0}
+.closing small{color:var(--muted)}
+
+.menu-btn{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  aside{position:sticky;top:0;height:auto;z-index:20}
+  .side-inner{padding:10px 16px;flex-direction:row;align-items:center;gap:12px;flex-wrap:wrap}
+  .logo-card{padding:7px 10px}.logo-card img{height:26px}
+  .side-client,.side-rule,.side-foot{display:none}
+  .side-title{margin:0;font-size:14px;flex:1}
+  .menu-btn{display:inline-flex;background:transparent;border:1px solid rgba(217,190,133,.5);color:#fff;border-radius:8px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
+  nav{flex-basis:100%;display:none}
+  nav.open{display:block;max-height:60vh;overflow:auto;padding-bottom:6px}
+  .wrap{padding:0 16px 60px}
+  h1{font-size:26px}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .funnel{grid-template-columns:1fr}
+  .fstep,.fstep:first-child,.fstep:last-child{border-radius:var(--radius)}
+  .fstep+.fstep{border-inline-start:1px solid var(--line);margin-top:14px}
+  .fstep:not(:last-child)::after{inset-inline-end:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%) rotate(45deg)}
+  .arow{grid-template-columns:1fr 84px}
+  .arow .bar{grid-column:1/-1;grid-row:2}
+  .boteh{display:none}
+}
+@media print{
+  aside{display:none}.layout{grid-template-columns:1fr}
+  section{break-inside:avoid-page}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="boteh" viewBox="0 0 120 170">
+      <path fill="currentColor" d="M60 166C22 162 4 128 10 96 16 66 40 52 58 40 74 29 80 18 78 8c-1-5 6-9 11-5 10 8 8 24-2 30 14 6 26 22 28 44 3 46-20 86-55 89z"/>
+      <path fill="none" stroke="#fff" stroke-width="2.4" opacity=".75" d="M60 152C32 148 20 124 24 100 28 78 46 66 60 57 74 48 92 58 96 80c5 32-10 68-36 72z"/>
+      <path fill="none" stroke="#fff" stroke-width="2" opacity=".6" d="M60 136c-16-3-24-18-21-33 3-14 13-22 22-27 10-5 21 3 23 17 2 20-8 41-24 43z"/>
+      <circle cx="61" cy="104" r="7" fill="#fff" opacity=".7"/>
+      <g fill="#fff" opacity=".7"><circle cx="40" cy="128" r="2.6"/><circle cx="82" cy="126" r="2.6"/><circle cx="34" cy="98" r="2.6"/><circle cx="88" cy="96" r="2.6"/><circle cx="60" cy="72" r="2.6"/></g>
+    </symbol>
+    <symbol id="star8" viewBox="0 0 40 40">
+      <g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="8" width="24" height="24"/><rect x="8" y="8" width="24" height="24" transform="rotate(45 20 20)"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="layout">
+<aside>
+  <div class="side-inner">
+    <div class="logo-card"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAREAAAB0CAYAAACi2gbTAAAh/0lEQVR4nO3deVhU1f8H8PddmAWGYQdZRcEFEBTCpVxCc8Hd+qq4b7RZWiraoln6LRNLRSwzSUtN3Ao1JaUwFS2+5oYoLqnkiogCCsgyMjOf3x9EPzNF5s4IM3pez3N9emjmM+dun3vuueecy8FMyWQy5OTkePz++8EBBQUFgoODna5ly5ZbmjRpcvXOnTsGxyMiuz179vW8UXjDReBFODk4//rss8+c5DhO8wiKz9QRIpIdOXKkeW5u7rMajQZqtfrXrl27/snzfBERGRRLJpNBo9G4JScnv1BSUiI6OjpSUHj4Fn9PzysaDTtMHoSr7wLc6+LFWw7z588MycnJmVJUVNSxtLTMobi4CCqVCnK54qatrWpf+/Ydd/Xt23t1SEjIzZpiEZHVypUr/Xbt2vNqQUH+sOLiYpeSkhKAA6yVynKFQnnaz89/e8fnOq8ePXTombpaR8Z4mzZt8ktLSxt96tTpnmVlpYFlZeXWlZWVsLKyKndzcy1Vq9Ubw8PDl0ydOvUcx3E1XnXOnz9vv2nTphFpaWmdS0pKIkpLSx1LS0uhVquhUCpvqWxsfvP29o575+OPM3zs7Qvrah0thdkkEY7jsHr16o4pKSnLd+/e0+TGjetcZWXlvz4niiLc3T3w1FNh5/r077/4pXHjPrvfFYeI5O/OmLFm9y+/9D958qRVSUnJfX/X0dERjf38Snr17r1q9gcfvMVxXLnJV+4xlpj4fXONpvjtO1qt8LDPkq4CZSVX0LyRGsEBrjV+1krgAM46TySb/7oEDPh75xGRPC4uLnbLli1jTp06ZX/jxo37ft/GxgaNGjWq7Natx47x41+Z0rRp0+z7fW7Dhu9e3bJl8+Tffvu16dWrV6HVav/1GUEQ4Obmhm7dup3v3bfv50MGD16o1+sftrpMXRIEAQkJCW936dJFLwgCAXjownEchYe3pjlzYt/huH/mwuPHj0eMHj36iIODQ61iASAfHx96+eVXth09etSmLtb5cTF58uRPWwQHk6eXF3k9dPEgT3d7+nCiK9EpX6I/fIlOP2jxJrrUj3JPrexc/VtEpJw4cWKSv79/rferWq2mUaNG3dq5c2e3e8u+YsWKyZ07d6baHnOCIFCnZ5+lr75a8T4Rmc0FmAGwZs2aPs8991ytD4y7l5CQlhQf/9mU6lh5eXkNJrzxxnWVysbgWA4ODjR+/PhtRKSog9V+LIwdOzZWrVYbtJ0nRoH0B3miwzzRoQctIDrVmnJPLY0Aqto+pk6d9p2rq6vB+1UURYqOfvHm2bNnvavLvXr16tc7dOigNzQWAOrYqRMtWvTZfx7JBmUMR0Rcp06d9omiKCmJAKCIiM43li9f7gEAr7wy/n03NzfJsRo39qPXX3/9+bpY98dBdHR0rCE1PgD05lCe9AetiA5bER160MIRnWr7dxKZPn16z4CAAMn71cHBgYYMGTIXAH744Qe3vn375vI8LykWx3HUrXv37KysLJ9HtFktCl/fBZgxY8Z7WVlZ7e93L1pbR44cdt6zZ++49PT0sMOHD8bk5eVJjnX+/J/IyMickZZ2yF1yEMZkBJ50Fy/ecjh06NDMM2ekt33fvHkTWVlZE3fsSH36l19+GZGent5AarsGEeHQwYONv/pq+RuSC/QYqdckcvz4ce/s7OxJhYWFRt1fFhcXIzv73IQjR458/ccff6iNiUVEuHTpwlOHDqUNMiYOYxr2tkJFampyn8uXLz+t0+mMinXu3DmbzMzDCWfPno0pLDTuIcvNmzdx/vz5cfv3729kVKDHQL0mkZ07d1qfOHHS0RSxcnNz3ZKTk1s+6CmMIfLy8nDx0qXBRPTQJw7MI0QEiHbKP/88M+TChQtGh6uoqEBqamqLCxcuuBvah+R+Tp8+5ZB+8KCT0YHug+d57Nixo6slNOCK9fnjcrn8qVu3bpokVl7eNTzocZ+hKisrceH8BQ+Y0SPwJxXHCfyZs2c8KyoqTBIvMzPzvo9xpSguKYG+snIkgEMmCfgXQRDw8quvfvL5kiXTMjIy40RRnGKqMj8K9VoTqaioeM5Uz9vLy8tRWnrbJLEAoKSkxLi6M2Myl69c1pmi5gBUHSemSkg6nQ6lpaUmqUlX43keE954Y17y1q3TfkxOxprEbyfPmTt3gSCYb6W4XpOIjY1Kz/OmKQLP8zBVLACsDmJGlAqlyWLxPI97+xUZFY/jTHbQCYKACRMmfJK8detbly9fBgCcPHECa9esmTJ37tyFVlZWpvopk6rXJHLnjvZ7U534tra2cHNzM0ksAPDw8KjXWz3m//k19rMy1ZXYwcEBarVRbe9/k1nJ4OLqes4UsXJycnxGjhwZ9/3330/Lzv5n59rMzEysWrVq8scff7xAFM3vsKzXJNKwoddFX1/TNG57eXmhV+8+JqnZKJVK+Pv5nwLA+jbXM5HXVTZt1uyESqUySbxOnTrpGzb0NUksd3d3WCvUm4yNI4oilnzxxfepqamTrl69et/PnDhxAmvWrJkyZ+7cT80tkdRrEomIiCho2TLkorEnPs/z8PVtdLJjh/afNGjQwOhyeXh4Vrq5uc7lOI4lkfrEcSguvqV38/Kb27hxY6OH0To7O6NNmzaLmjZtlmGKi01AUGBOeHi768bEuH79epMXX3zxmy+WLHkqJyenxs9mZmbi21Wrps6bN+9TnjefNpJ6TSJqtfpGcHDwrEaNG/97pJ0BfBv64umn233Ws2fP5a1bt7lizAGiUCgQFvZU6vjx438zpkyMaZTdrpSPGf78sZCQkO3G1kZCQ8Ou9ejRY3nHju3jmzdvblQsbx8fbXBQ0IeBgb65UmPwPI/Y2Nj47du3j7l161atDtqsrCys+Xbl1Pj50+abSyKp9x6rL7/88srIHj1/lHqfKpPJ8FR4+L7IoUPXubm5Zfv4NI5q3ry55Kb8tm3boUfvnvNYLcRMiCJAenTq1Gl2UFDQNalhAgICEBnZY16zZs1OvfDCC5vat2//i9SkpFKp0DkiYudbb721TGp5Ll265BkVFfXpN9980/PSpUsGfTfj6HF8tWJdzPpv3v2U48zr1qbeFBUVOY2Ljr5kY+CgOZlMRoOjoop27drbtjoWEfHvvjsjtmnTpgaPiQgLC6Mvv0xYxDqZ1V5djZ0BgGXLlk9t06aNwfvVy8uLXn311UVE9PcZl5WV1Wrs2HE3ra2tDYplbW1Nvfv0+S0pKanmuQxqIJfLMWPmzEMeHh7Sx4uFga7sDqTSM299ArDDFQCwZ8+eJiNGjtzp4lK7UZqOjk7UtXv3tMTExCb3xuJ5Hu+/P2teu3btqDaDrERRpNDQ0LzFixfHmPPzeHNUl0mEiPiYmJiI1q3bXFUqlbUaKBcQEKCZMmVK3P1ucZOTkxs///zzqbU9mT08PGjQoEH/W716teQEQkTKAS+8MMfJyUlnyDa7e2kTBDqxUSQ6yhGd9iNN9pvzWCL5CxFZxcRMey0yMvJGo0aNSKlUkpWVFQmCQKIokkKhIG9vH+rSpcuNuXPnpVy5cuWBXY4FQcDGjd9HjxkzJqtly5Zka6smmUxGgiCQIAgkk8nIzs6Onn76aZowYeLpxMTEp+tyXR+18vJyXyIyvpX5IaKjo2Pt6yiJVNu8eXOr6OjoDRERncnR0ZFkMhmJovj3frW1taXg4GCKihpyet68eR1reppBRPbTp0+fExERcd3Hx4cUCgWJokg8z991zHlT165dCz788MOFJSUlxiQQh5nvv5/p7OIiuQbSLpijo2sFoqPV2wlEp/2oMGtSvdVIzLJL1eHDhxtu3749QqOpHHvu3FnrK1cuw8nJCX5+fuUqlerrnj17pnXs2PFCbboCE5H14sVLeh09erihIAhRZ8+ehSBYITCwOYgoqX37TueHDh28neM403V3rQdExM+fP/+pgoKCoTk5OT6Ojo69tVptcWlp6S+enp7HgoKCtg8fPvyYqXp+VouOjo5N2rTp7Vs3b9b6O28O5RE3RQDHo+rUuC8tYNMG1zCms3vA+D33/l8iEpKTk5/ftWtXQ61WH3XmzGlUVGjQrFkz6HTa74OCgi5Mnjy51vv1wIED3snJyREajWbsuexsVW5uLtwbNECTZs0qZDLZN9169Urr2KbNn7VeyXvwPI+BAwfG7tu37+3cXGltsaHNgNWzRbQI4IB/PIrQATaNcUfRff5ZfLCgRSM3yW1Hj53qXqgcx5mkR2p1rOp4jwOe57Fy5bf9Bg4c9GtISAhZW1vT3XOziKJIarWa2rRpo42Ojv4uOTm57cNiGiI6OjrW3r5uayL32wam2q+mPuYAgIi8pr/33k+Ojo6SayD+3qDdXwpEmTVtLw/KPznn9Knz5b5GF9oAZt20e/e4GlNcQU0dr77xPI93350xKyFh6QcHDx1C5X1mwddqtSguLsaBAweEkydPDrx6Nbf/ggULRsXExKyvhyI/Eqbcr6Y+Rq5evdpw0qRJH2/evLm71OkHmvoAy2YIiGjL31MDuZsIlObCSbWsmbzswvSNRBMGP2SCalN5PC7HTyCe5zFp0pTZ69YlfpCenn7fBHKv27dvY8eO7VYrV65aGRsbO6QOivlE279/f6M5c+bsSExMHGboY9xqjT2BL94RENGOBx569y4Cty9Dpd38Uuest/938lBSnUysxZKIhVq6dOmbu3f/8v6ffxp+m378+DH5rl27v9myZUvnh3+akeL06dONvlm58se1a9cG5OfnS4rh5gR8Nk3Ac+1rk0CqiUBlPpxt9oTZ2urrZGIts76dYe6vqKjIaejQYVMzMzMlx0hL26Pw9PR4VxTF3eY8V4UlysjI8I2PX5y8NjExQOokWU72QNwUAb2e/SuB1PrOSguoGiK/PPJnwcFvnaQfNxCriVigJUuWjM3IOOJlzFwsGo0GBw8ejEhKSupiwqI98XJycnwSEhKSN2xYHyg1gTRwAj6fJmBoJF81BLTWCaQSsGmMfH30T7tp9n88PMJMM0vXQ7AkYmGISHX5cs6Ea9eMf4p3+fJlqzNnzsSYoFgMqromfPTRx9sTExODpDaiWiuA2Ik8hvT+69Q0qAbijUL9qJ+zxZmDB7eouy4LLIlYmIKCAj4r67jKFE8OiouL8fvvv9uZcpKeJ9WpU+d9V6xYsX3DhnVBxcXFkmLYWgMfvcZjWE8BqO7PWis6QOmG3PL+qUfK3x/criknrQASsTYRC3PgwAEUFOSbZHAgESEvL48NNDRSVRvIJ8nr1q0NLCoqkhRDKQc+Gs9jwlAePA8DZrLRAdbOuFraa+dl3RsDu7Wr2wQCsJqIxSkoqJrb01TYO2WNk52d47N8+fJtGzduCJKaQGRWwOxXebwWJYDnOQMTiCuulfdLPahZ8UK7dk3rPIEALIlYnCZNHKFQmO4tn9bW1iaL9aQ5e/as9/z5c5LXrl3bQmobiMADU4ZzeGMoD1GEYQnExgW5Zb1SM/JiBw7owBn/rhSJWBKxMG3btuWaN29ukttQmUyG4OBgq8eh925dO3HiRMOFCxftWL9+XfBNA8YN3U1mBUwZzuO9FwXI5YbUQPSAXI1rpZE7fy+ZObhXL+d6qYFUY0nE8pQ1axawzxQ1CFdXV4SEhKSYoExPlOTk5IZxcYuS169fGyQ1gfA8MHkoh1njBdhYc1UNqbWiB+TW0Ii9TlwTBgx6vnOjW5IKYEIsiVgYjuMqW7QIjA0KamFsHLRs2TJv9OjRn5uoaE+ElJQU76+//nrbunVrW0hNIAAwsheH6dEirJWofQ2EqhLIHetR5cW2774TGvr8LckFMCGWRCzQoEGDDjRr1nShvb295BheXl76Vq1avc1xXIHpSvZ4S09P9/zyy2XJP/30U3BpaankOKN6c/hkkgC1GgbUQHSAXAm9os+xYvlLUa5ewcmSC2BiLIlYII7jdJMmTZobGRl5Tqk0/MVOjo6O6Nev346PPvpo9SMo3mNp8+bN3vPnz9/+888/hRiTQIZFclg4RYCriyG3MASIcmhUo8sKbN6Z6OLVapvkAjwCrJ+IhQoPD89PSUnpCXA/pqSkNK3tO429vb3RvXuPn8eOnTKc4zjWoloLqampPkuWLEneuXNncFlZmeQ4/Z/lsDBGgJPjvZMK1UQPCDw0NsMrbstfGeHqEbJXcgEeEZZELFhkZOS5jIyMHnKlIubokYwJZ8+ewYMOcnt7ewQGBlW2bt1mxqJFC5dxXN13SrJEmzdv9v5i6dJtKSkpwca8w7drGw6Lp4lwc4UBCYQAkYNG0b/itnzIMGfPkM2SC/AIsSRi4UJDQy+Iojhx6dKEn9PT90Vfv369U25urn314C9HR0e4uLhc8PPzS3/uuefi+/XrdzA+Pq6eS20Z0tPTPefPX7BtZ2pqiLEJ5MvpAny8YFgNRBRQaTOgvADjhnn6dN0iuQCPGEsijwGtVouXXhq3DcC27Oxsn61bt9pcuHABANCiRRiiop7PV6vVN+Lj4+u1nJYkKSnJa/6CBdt27Njesry8XHKcDq2Ar2YK8PXmDJgThACBg0bZv/y2fOJwT5+OWyQXoA6wJPKY8fPz+9cUWi+9NLo+imKxUlLSvBMS4pNTU1NDjEkgoc2A+GlSEggPjXW/ikJh3AgPn45meQtzN5ZEGOYuSUnbvRIS4relpKSEGNOIGtoM+PoDAa2CapoX9V4ECHpUyDprSuVjR3j49jT6ZeF1gT3iZZi/HD582CMxccW21NTUlsYkkBb+QMJ7AloFGppACBqrZyuuVf5nmLNv7yTJBahjrCbCMACWLVvmPnPmzOQ9e/a0MiaB+LoD8TECwoMNmRe1KoHckXUqLxKHjWjU4iWLqIFUY0mEeeItXbrUc82aNckHDhxopdFoJMdp5FE1M3uXWs3MfhcRqBA7VeRpB4/yDbKsBAKwJMI84eLj473WrFmz7eDBg63u1OK1Gw/S0B34crqA7u15A0bjAhB0qBCe0dzihozybfnK95ILUI9YmwhjxjjoSC29avAQS5eu9ExKSvrB2ATi4gAsmCyge0cDJ1YW9KjgQiqulD070j3ole8kF6CesZoIY6Y4QHsLav225yqOdXEzZWRBBpy45OcfE7v89f37D/gak0DsVMD8STxe6Grgqx14wh34l+ZWRAxv0m7OD5ILYAZYEmHMlADS/Alb+Y0PwZv4MCVCQ+tzQKUcxiQQANDpAZ1Bkyr/fxl4AaK1ytsf4CQEMB/irWPvOOhufqcyplMNI41SCZTYvKb1fWrGNbDBcP/CgQBNEUx+gnF6yEUnDIkajErxGPbtSZX83t3bZcDUeD04AGMGCFV/rE0o4iFqz8pdxNXzL/7+mqJh2yVzJBXADIgyRcV/RfWtF23kZajKiMw/3HtAmOyiQeCsRGiEkosfnEDIbKBOXr5seTg8iuNSrwdsbdXo27c/ZCKHvWm7JddKCouAKYuqWlNH9xPA1Xa2dhLAVxyDh6z4o7ysmS006nem+vjY5EgqRD0SRUErs5JXKkB3wNpZ6xIBVgRBpzN8QhAzUnWuWGYlSqfTQS6Xo2+//rC1tcWPyVslJ5KbxUBMfNXWGDNAqP3FhkSIugtwtUkcUl7JNb1+m/q4qrhcSYWoJyKBI+gB6FktpM7p7/qXqRdEBEEQ0OW5rlAoFNj6w2ZInXSosAiIWaQHxwMj+woGvD9GBIrOQ2nzZZiYl5984eSFPr6BvhaTSFjVg3niERE4jkP7Dh0xeMgwODo6So5VWAxMWajH4kQdtFqq/RnGiUBpPqw0G8Ic9e/9eOmPbZ6SC1HHWBKpd5Z5K/C4qW5Ybd26DaKGDIeTk7PkWIXFwLuf67FgtQ6VWhiQSASg7BZs+R9CnTWfbzt1aGOwJbRTsiTCMH8hIuj1erQIDsaYcdHw8vaWHKviDjD7K8KCVTpoDUkk4IGyMigpLdTNKunA8UM/dJdciDrCkkh9M/8LzROFiEBE8PPzx/ARo+Hn5y85VrkGmP3VXzUSHQxLJJVaONBmRYD17GVF51eMlVyIOsCSCMPcg4ig0+nQsGFDjBg5GgGBQZJjVdwB/rtcjwWrDLy1AQdo9RAqj/lal6/6qujMR+MkF+IRY0mk3gk0u4XVE9VHhOer2hFRj4uVyFW9PLsGOp0Obg0aYOTI0QgNC5e8vmUVwIfL9Vj4raG3NhxQSRArfhVsKjcklP/5/ktnzpBcckEeEbGivFwnY4179UOng0571eXc0YRvBa7S7B712qgdoSXPrz0aP5NmyriXrxH2Hap6FFovhx5HKNNokFd6G4INV2MZdDod7B0cMGToUKhUNvjt133Q6w3fVWUVwKwEPW6VADOiBahUqOV7ZzhAL0CoyBIE0ifYaK3GXcj6+gxf/WX93//UOYW1LSA2/E68WuTWX626w0bR1LmqlxfRza0qP+9fR/yjbcTQdhKS8J2H0gMyb1RoItMBmDSJJO8j7D5U6zc3PRJ6KkaX7ufRrUcgKh9SD9TpdFCp1Og/4AUoFUrs2rUTWq0hE4ZUqdAAn67WQ1NJ+Og1EdbWqP0LrEgEKk7BQx7fDqJtO4N/3OT0gOiAInonSMz64+bBX/7gPO/c0YPjWCtfXSFUdb0O9r8ND6fb9V2c+9ADHIEXC2s+WyRcBCvuVC31rUJTWevcq9froFQq0advPyiUSvyUsh1SJjDS6YH4tQSQDh+OF2BT6xoJAAiA5iagKTT4d01PD2hLQNZlleLuQ7i6ciWH8jI9e1JQD2In8ujeXjDgQKpLAh7nZjNDL5p6vR68IKBrt+6wsbHBls2bUF5u+FSKegI+26gHxxE+el2AUsEZkIzNZX9wqD4+RI7jBL3+r9tC1jTCMDUiIvA8j/YdOkIul2PLlk24dbN2rzC9m1YLxK8jADrMHi9CZQMzvZA8HA8A7C6GYWqvundrm7btMHTocLi4ukqKo9MDi9cT3v9Ch6JiqrqwWyBzqRsxjEWp7t0a0rIVRowcDU9PaUNdtDogbq0eb3yiw40CssgHHCyJMIxERAStVgt//yYYMXIM/Js0kRxr9Y+EmDgdCgotL5GwJMIwRtLr9fBt1AjDRoxC84AAyXG+/ZEwab4O+RZWI7Ggoj6eBB5Ve8Ec26VEQLDQ+/Ta4DgOgiBAMMFKEhE83D0wavRYbEr6HkcOH5LUKW3NdgIPHeKmCnB0qrkjXL0TAY4HRL1eL3l+ScZ41wqAs9kEMrf+qkSQ2eugcKi5L4RWq7XY4+f27du4di0X2krDO449SPUERxXlZcjKypIUY/V2gh46TBslQCkHzHLzEkG0Jsi9tRB1RDzH8QDHmeXF8HFGRPhqM2FjqtbsLjikB7w9StCne80nQklpSdV/WODx8/v/0pF17NhDx9AYiud5SR3R7rZmO2Hn71rIrMyzMkJ6wMmxAjOm51uJISEtSwYOHkyaCg3HnvXWDZ7jkJ+fj7S03Si6fQdF5thhFYCOlyGvxKPGz3To0AlOTi4oLi4Cx1lGExvPcygqKsLOn3/CjRvX67s4D3StoL5LULMSjYCLV0t/FVX2dl+3b9/xdQByS62WWhpBEJCdnY3fftuHSiPfe/IoCaIMgsKrxs+0bNkSDRq4o7i42GKGTQiCgKtXc5G2excqKyvruzgWSxRFZGad3yMWFBZqZJwIjuMs9t7W0lTPV2EZai6nVqv9e7GUJFK1/U3XDvIkk8vlVrwgCJax5xmGMUuWcRPLMIzZYkmEYRijsCTCMIxRWBJhGMYoLIkwD2FuXWkZcyMKgsBBr5eJohXI7PpeP54EQYAoVj1Wr17MTfXkO3jIhUbgeCsrK6u/1scyrkmCaP7b39zdfXyIDtbWGp2ey+QF3sroJMK6mdQKzwtwcXFG6/BwEAFyucwEUatPhH/vhH/MWlfT+XLXV4n0cHd3R7NmzWrsN8lx/A5RELra2Fg/dBSbuZyqHC/A0d4e4eGtQaSHXG52b2Ewe0QEBwdHBAQE3OIAw+eaZEyD53mz3vZEVRMU16YTYtV61PVVROK2IwI4zuy3vyWwnE6TDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwDMMwzBOKDRxgGAsjk8mwfv16vw0bNqCoSAM7OzkGREVhVFRUtpTZ67OysnyWLVtmdfbyZQBAl2eewbRp065xHFdam++zJMIwFmLv3r0uW7duHZuRkdG1tLSsc07OFWi1WgiCAE9PT8jl8l/Cw8N/HjhwYOozzzxzvKZYRCTGxcUNSEtLG1xUVNTj8pUr1mWlVTnDydkZcpksKyws7I/evXt/379//80cx7GRdgxjyZYuXfpSnz59zru6upEgCISqIdP/WHieJ1dXVxo0aLBm0aJFox8UKy0tLWz8+Nf3N2/enBQKxX1jASCVypY6dOhAMTExK4iIvbebYSzV5MmTXwkMCtLhASf7/ZbmzZtrR4wYMebeWGvXfhc6YMCAK0qlstaxXFxcqHfv3l/duHHD9tGuKcMwJsXzPBbExb0SFBSkhwEJpHpp0qSpdtasWWOr50zJyMjwHTRo8BW5XG5wLEdHB5o8eXI6ET108imGYczE3r17m/aIjCyHhARSvXTu3KVkzZo1DYlIGDNmzCqVylZyLF9fX1q8ePGCOll5hmGMQ0T8lCkxX6rVasknPQBSq9U0bty4j1NSUiLDwsKMisVxHEVERGSlp6cr7y6rZcysyzBPHmVm5tEBxcXFRgUpLi7GxYsXx/z6629zTp8+bVQsIsLZs2eDdu3aNejuv7MkwjBmKDExsc+NGzecTRHrjz/+cD9y5HBYWVmZ0bGuXbuGvLzr/9m4cePfbSMsiTCMGdq791fbwsJCkzRi5ufn4+jRo6YIBZ1Oh0ptZdc+ffp4Vf+NJRGGMUM3bxbo79y5Y5JYWq0WJSUlJokFANfz8mTXr1//O3ewJMIwjzmO4yCKpusrZmurFuzt7f/u7c6SCMOYobZt24qOjo4miaVSqeDn52+SWBzHwc7e7rydnV1R9d9YEmEYM9SuY8cjdnZ2tRoA9zBubm6FgYEBZwTB+CYWpVKJkuLi+RzH/f1mRJZEGMYMtW/TJqNVWNh5Y29D5HI5PDw81gcGBn7g7u5udLmaBwRUPP30078YHYhhmEdv1apV4wIDAyV1ea9eAgOD6NNP4164ffu2+7Bhw4o5jjOq41r0iy+vZq8eZRgLQUTcq6+9tt7ZxUXyST958pQDRKQEgNjY2G6BgYFlUmLxPE+9evcu+vHH1OC6WXuGYUzi6NGjjcaMGXPC0O7varWaoqKiMvbv3+91d7xPP53/ZWhoqMHd3dt36HBr4cKF3R/9GjMMY3KHDh3ymTZt2nF//yZUm9uRRo0a04QJE45s27bT895YRGQ1a9asN0NDw4oViodPB2BnZ0f9+w8onh8X16Mu1pVhmEckPz/fKyEhYW6fPn2O+Pv7k0qlIoVCQXK5nBQKBdnY2FDTpk1p6NChuZ999tmH169fr7EVNSnph8iXX37lt9DQ0ApHR0dSKpUkl8tJLpeTtbU1NWjQgDp37lzx5ptvJu7fv/+pmmKxFhKGsSBEJEyePLmdnZ1d1MWLF73KysqgVFrDy8vzolaLpGnTpl9wdra5Utt4S5cubblr1y5XZ2fncQUFhXKOA3x8fDWFhflfDxo06HpkZGTmw2L8H6pSJOQb4H5IAAAAAElFTkSuQmCC" alt="یکتانت"></div>
+    <div class="side-client">پروپوزال اختصاصی برای</div>
+    <p class="side-title">حرز رضوی<br><span style="font-weight:400;font-size:13.5px;color:#BFD1D0">کمپین دعای رزق امیرالمؤمنین (ع)</span></p>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false">فهرست</button>
+    <div class="side-rule"></div>
+    <nav id="nav">
+      <ol>
+        <li><a href="#summary">خلاصه مدیریتی</a></li>
+        <li><a href="#business">شناخت کسب‌وکار</a></li>
+        <li><a href="#challenge">چالش و فرصت</a></li>
+        <li><a href="#strategy">استراتژی پیشنهادی</a></li>
+        <li><a href="#services">خدمات پیشنهادی یکتانت</a></li>
+        <li><a href="#mix">ترکیب رسانه و بودجه فاز اول</a></li>
+        <li><a href="#scenarios">سناریوهای بودجه</a></li>
+        <li><a href="#creative">اصول محتوا و پیام</a></li>
+        <li><a href="#kpi">شاخص‌های عملکرد</a></li>
+        <li><a href="#tracking">سنجش و ردیابی</a></li>
+        <li><a href="#optimize">برنامه بهینه‌سازی</a></li>
+        <li><a href="#timeline">زمان‌بندی</a></li>
+        <li><a href="#phase2">فاز دوم: توسعه</a></li>
+        <li><a href="#next">گام‌های بعدی</a></li>
+      </ol>
+    </nav>
+    <div class="side-foot">یکتانت · مهر ۱۴۰۵<br>این سند محرمانه و مختص حرز رضوی است.</div>
+  </div>
+</aside>
+
+<main>
+<header class="hero">
+  <svg class="boteh b1" aria-hidden="true"><use href="#boteh"/></svg>
+  <svg class="boteh b2" aria-hidden="true"><use href="#boteh"/></svg>
+  <div class="wrap">
+    <p class="bismillah">بسم الله الرحمن الرحیم</p>
+    <span class="eyebrow">پروپوزال همکاری تبلیغاتی · فاز اول</span>
+    <h1>حرز رضوی × یکتانت</h1>
+    <p class="lead">برنامه معرفی و فروش «دعای رزق امیرالمؤمنین (ع)» از طریق پیام‌رسان‌های داخلی و شبکه تبلیغات وب یکتانت؛ شروعی سنجیده با بودجه مشخص، یادگیری از داده و توسعه بر پایه نتیجه.</p>
+    <div class="meta">
+      <span>تاریخ: <b>۲۷ مهر ۱۴۰۵</b></span>
+      <span>بودجه فاز اول: <b>۱۰۰ میلیون تومان</b></span>
+      <span>مدت فاز اول: <b>۴ هفته</b></span>
+      <span>هدف: <b>فروش محصول</b></span>
+    </div>
+    <div class="verse"><span class="ar">وَیَرْزُقْهُ مِنْ حَیْثُ لَا یَحْتَسِبُ</span><small>سوره طلاق، آیه ۳</small></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- 1 -->
+<section id="summary">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۱</span></div><h2>خلاصه مدیریتی</h2></div>
+  <p>هدف حرز رضوی در این مرحله، معرفی و افزایش فروش محصول «دعای رزق امیرالمؤمنین (ع)» است. پیشنهاد ما برای فاز اول، اجرای هم‌زمان دو مسیر مکمل است:</p>
+  <ul class="clean">
+    <li><b>دسترسی گسترده در پیام‌رسان‌های داخلی</b> — پین پیام‌رسان روبیکا و بله، برای رساندن پیام محصول به مخاطب گسترده در محیطی که کاربران روزانه با آن درگیرند.</li>
+    <li><b>جذب هدفمند و بازگرداندن مخاطب در وب</b> — تبلیغات همسان و بنری برای آوردن بازدیدکننده جدید، و ریتارگتینگ و ریتارگتینگ محصول برای بازگرداندن کسانی که محصول را دیده‌اند اما هنوز خرید نکرده‌اند.</li>
+  </ul>
+  <p>بودجه ۱۰۰ میلیون تومانی فاز اول به‌طور مساوی بین این دو مسیر تقسیم می‌شود. خروجی اصلی این فاز، علاوه بر فروش، پاسخ به این سؤال است: <b>کدام کانال، با چه پیامی، فروش را با کمترین هزینه به دست می‌آورد؟</b> بودجه فاز دوم بر اساس همین پاسخ و روی کانال‌های اثبات‌شده افزایش می‌یابد.</p>
+  <h3>ظرفیت‌های یکتانت در این طرح <span class="tag t-ver">منبع: معرفی‌نامه رسمی یکتانت</span></h3>
+  <div class="grid g4">
+    <div class="stat"><div class="v">+۲۵۰ میلیون</div><div class="l">بازدید روزانه پین پیام‌رسان روبیکا</div><div class="s">هدف‌گیری بر اساس موقعیت جغرافیایی و علایق</div></div>
+    <div class="stat"><div class="v">+۱ میلیارد</div><div class="l">نمایش روزانه تبلیغات همسان</div><div class="s">در بیش از ۲۳۰۰ وب‌سایت نمایش‌دهنده</div></div>
+    <div class="stat"><div class="v">+۶۰ میلیون</div><div class="l">کاربر قابل هدف‌گیری</div><div class="s">در شبکه تبلیغاتی یکتانت</div></div>
+    <div class="stat"><div class="v">نخستین</div><div class="l">مجری ریتارگتینگ در ایران</div><div class="s">به‌علاوه کمپین محصول و سبد رهاشده</div></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="business">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۲</span></div><h2>شناخت کسب‌وکار</h2></div>
+  <div class="legend"><span><span class="tag t-ver">واقعیت</span> اطلاعات تأییدشده</span><span><span class="tag t-inf">برداشت</span> تحلیل ما، نیازمند تأیید</span><span><span class="tag t-rec">پیشنهاد</span> توصیه راهبردی</span></div>
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">کسب‌وکار و محصول</h3>
+      <p><span class="tag t-ver">واقعیت</span> حرز رضوی (hirzrazavi.ir) فروشگاه آنلاین است و در حال حاضر تمرکز تبلیغاتی آن بر محصول «دعای رزق امیرالمؤمنین (ع)» است.</p>
+      <p><span class="tag t-inf">برداشت</span> تصمیم خرید این محصول بیش از آنکه قیمت‌محور باشد، <b>اعتمادمحور</b> است: اصالت متن، منبع دعا، کیفیت ساخت و اعتبار فروشنده.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">مخاطب</h3>
+      <p><span class="tag t-inf">برداشت</span> افراد مذهبی و علاقه‌مند به ادعیه و معارف اهل‌بیت (ع)؛ با دو انگیزه اصلی: <b>دغدغه رزق و برکت</b> (برای خود، خانواده یا کسب‌وکار) و <b>هدیه معنوی</b> به دیگران.</p>
+      <p><span class="tag t-inf">برداشت</span> بخش قابل‌توجهی از این مخاطب در پیام‌رسان‌های داخلی فعال است؛ همین، انتخاب روبیکا و بله را برای شروع منطقی می‌کند.</p>
+    </div>
+  </div>
+  <h3>مسیر خرید مخاطب</h3>
+  <div class="card" style="padding:16px 20px">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px">
+      <span class="chip">دیدن پیام</span><span class="muted">←</span>
+      <span class="chip">ورود به صفحه محصول</span><span class="muted">←</span>
+      <span class="chip">شکل‌گیری اعتماد</span><span class="muted">←</span>
+      <span class="chip">خرید</span><span class="muted">←</span>
+      <span class="chip">خرید مجدد یا هدیه</span>
+    </div>
+    <p class="muted" style="margin:10px 0 0;font-size:13.5px">گلوگاه اصلی معمولاً مرحله «شکل‌گیری اعتماد» است؛ بیشتر بازدیدکنندگان در اولین بازدید خرید نمی‌کنند. به همین دلیل ریتارگتینگ از ابتدا در طرح قرار گرفته است.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="challenge">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۳</span></div><h2>چالش و فرصت</h2></div>
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">چالش‌ها <span class="tag t-inf">برداشت</span></h3>
+      <ul class="clean">
+        <li>محصول اعتمادمحور است و معمولاً با یک بار دیدن تبلیغ خریده نمی‌شود.</li>
+        <li>پیام تبلیغاتی در حوزه دینی باید محترمانه و دقیق باشد؛ ادعای اغراق‌آمیز، اعتماد مخاطب را از بین می‌برد.</li>
+        <li>بدون ردیابی دقیق، تشخیص اینکه کدام کانال فروش ساخته، ممکن نیست.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">فرصت‌ها <span class="tag t-rec">پیشنهاد</span></h3>
+      <ul class="clean">
+        <li>رسیدن به مخاطب گسترده در پیام‌رسان‌های داخلی با پین پیام‌رسان.</li>
+        <li>بازگرداندن بازدیدکنندگان مردد به صفحه محصول با ریتارگتینگ.</li>
+        <li>زمان‌بندی کمپین‌های بعدی بر مناسبت‌های مرتبط با امیرالمؤمنین (ع) مانند ۱۳ رجب و عید غدیر.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="strategy">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۴</span></div><h2>استراتژی پیشنهادی</h2></div>
+  <p>کمپین در سه لایه طراحی شده که هر کدام نقش مشخصی در مسیر خرید دارد:</p>
+  <div class="funnel">
+    <div class="fstep f1"><div class="k">لایه اول · آشنایی</div><h4>دیده شدن گسترده</h4><p style="font-size:14px;margin:0">رساندن پیام محصول به مخاطب گسترده در پیام‌رسان‌های داخلی.</p><div class="ch"><span class="chip">پین روبیکا</span><span class="chip">پین بله</span></div></div>
+    <div class="fstep f2"><div class="k">لایه دوم · جذب</div><h4>آوردن مخاطب به سایت</h4><p style="font-size:14px;margin:0">جذب بازدیدکننده جدید و علاقه‌مند از وب‌سایت‌های پربازدید فارسی.</p><div class="ch"><span class="chip">همسان</span><span class="chip">بنری</span></div></div>
+    <div class="fstep f3"><div class="k">لایه سوم · تبدیل</div><h4>بازگرداندن و فروش</h4><p style="font-size:14px;margin:0">یادآوری محصول به بازدیدکنندگانی که خرید را نهایی نکرده‌اند.</p><div class="ch"><span class="chip">ریتارگتینگ</span><span class="chip">ریتارگتینگ محصول</span></div></div>
+  </div>
+  <p class="muted" style="margin-top:16px;font-size:14px">لایه‌های اول و دوم، مخاطب ریتارگتینگ را می‌سازند؛ یعنی هرچه ترافیک ورودی بیشتر باشد، لایه سوم مؤثرتر عمل می‌کند.</p>
+</section>
+
+<!-- 5 -->
+<section id="services">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۵</span></div><h2>خدمات پیشنهادی یکتانت</h2></div>
+  <div class="tbl-scroll">
+  <table class="tbl">
+    <thead><tr><th>اولویت</th><th>سرویس</th><th>چرا برای حرز رضوی</th><th>مرحله مسیر خرید</th><th>هدف</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pri pA">A</span></td><td><b>پین پیام‌رسان روبیکا</b></td><td>بیش از ۲۵۰ میلیون بازدید روزانه با هدف‌گیری بر اساس موقعیت و علایق؛ دسترسی سریع به مخاطب گسترده.</td><td>آشنایی</td><td>دیده شدن و ورود به سایت</td></tr>
+      <tr><td><span class="pri pA">A</span></td><td><b>پین پیام‌رسان بله</b></td><td>گسترش دسترسی به مخاطبان پیام‌رسان بله و امکان مقایسه مستقیم عملکرد با روبیکا.</td><td>آشنایی</td><td>دیده شدن و ورود به سایت</td></tr>
+      <tr><td><span class="pri pA">A</span></td><td><b>تبلیغات همسان</b></td><td>نمایش در قالب محتوای سایت‌ها؛ مناسب برای پیام‌های توضیحی و اعتمادساز.</td><td>جذب</td><td>ترافیک باکیفیت</td></tr>
+      <tr><td><span class="pri pA">A</span></td><td><b>ریتارگتینگ</b></td><td>بازگرداندن بازدیدکنندگانی که خرید نکرده‌اند؛ مستقیم‌ترین ابزار برای تبدیل.</td><td>تبدیل</td><td>فروش</td></tr>
+      <tr><td><span class="pri pB">B</span></td><td><b>ریتارگتینگ محصول</b></td><td>نمایش خودکار همان محصولی که کاربر دیده، به‌علاوه محصولات مکمل و هدف‌گیری سبد خرید رهاشده.</td><td>تبدیل</td><td>فروش و افزایش سبد</td></tr>
+      <tr><td><span class="pri pB">B</span></td><td><b>تبلیغات بنری</b></td><td>تقویت دیده شدن نام برند در رسانه‌های پرمخاطب و پشتیبانی از سایر کانال‌ها.</td><td>آشنایی و جذب</td><td>تکرار برند</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted" style="font-size:13px;margin-top:10px"><span class="pri pA" style="width:20px;height:20px;font-size:11px">A</span> ضروری — پاسخ مستقیم به هدف فروش &nbsp;&nbsp; <span class="pri pB" style="width:20px;height:20px;font-size:11px">B</span> مکمل — تقویت عملکرد کانال‌های اصلی. سرویس‌های توسعه‌ای (C) در بخش فاز دوم آمده‌اند.</p>
+</section>
+
+<!-- 6 -->
+<section id="mix">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۶</span></div><h2>ترکیب رسانه و بودجه فاز اول</h2></div>
+  <p>بودجه کل: <b>۱۰۰ میلیون تومان</b> برای ۴ هفته.</p>
+  <div class="split">
+    <div style="flex:50;background:var(--teal-800)">پیام‌رسان‌های داخلی · ۵۰٪</div>
+    <div style="flex:50;background:var(--gold-500)">وب و ریتارگتینگ · ۵۰٪</div>
+  </div>
+  <div class="card">
+    <div class="alloc">
+      <div class="arow"><div class="n">پین پیام‌رسان روبیکا<small>آشنایی و ورود به سایت</small></div><div class="bar"><i style="width:100%;background:var(--teal-800)"></i></div><div class="amt">۲۵ میلیون<small>۲۵٪</small></div></div>
+      <div class="arow"><div class="n">پین پیام‌رسان بله<small>آشنایی و ورود به سایت</small></div><div class="bar"><i style="width:100%;background:var(--teal-500)"></i></div><div class="amt">۲۵ میلیون<small>۲۵٪</small></div></div>
+      <div class="arow"><div class="n">تبلیغات همسان<small>جذب ترافیک جدید</small></div><div class="bar"><i style="width:88%;background:var(--gold-700)"></i></div><div class="amt">۲۲ میلیون<small>۲۲٪</small></div></div>
+      <div class="arow"><div class="n">ریتارگتینگ<small>بازگرداندن بازدیدکننده</small></div><div class="bar"><i style="width:48%;background:var(--gold-500)"></i></div><div class="amt">۱۲ میلیون<small>۱۲٪</small></div></div>
+      <div class="arow"><div class="n">ریتارگتینگ محصول<small>نمایش محصول دیده‌شده</small></div><div class="bar"><i style="width:32%;background:var(--gold-300)"></i></div><div class="amt">۸ میلیون<small>۸٪</small></div></div>
+      <div class="arow"><div class="n">تبلیغات بنری<small>تکرار برند</small></div><div class="bar"><i style="width:32%;background:#CDB98F"></i></div><div class="amt">۸ میلیون<small>۸٪</small></div></div>
+    </div>
+  </div>
+  <div class="note" style="margin-top:14px"><b>منطق تقسیم بودجه وب:</b> سهم بیشتر به همسان داده شده، چون ریتارگتینگ فقط روی کاربرانی اجرا می‌شود که قبلاً به سایت آمده‌اند؛ پس اندازه مخاطب ریتارگتینگ به ترافیک ورودی وابسته است. اگر در هفته اول مخاطب ریتارگتینگ سریع‌تر از انتظار رشد کند، بخشی از بودجه همسان به ریتارگتینگ منتقل می‌شود.</div>
+  <div class="note gold" style="margin-top:10px"><b>روبیکا و بله با بودجه برابر شروع می‌کنند</b> تا مقایسه عادلانه باشد. پس از هفته دوم، بودجه به سمت پیام‌رسانی که هزینه کمتری برای هر فروش داشته منتقل می‌شود.</div>
+</section>
+
+<!-- 7 -->
+<section id="scenarios">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۷</span></div><h2>سناریوهای بودجه</h2></div>
+  <div class="grid g3">
+    <div class="scen">
+      <h4>شروع کم‌ریسک</h4>
+      <div class="bud">۶۰ <small>میلیون تومان</small></div>
+      <dl>
+        <dt>کانال‌ها</dt><dd>پین روبیکا ۲۰ · همسان ۲۰ · ریتارگتینگ ۱۰ · پین بله ۱۰</dd>
+        <dt>هدف</dt><dd>آزمون اولیه بازار و پیام</dd>
+        <dt>محدودیت</dt><dd>داده کمتر برای مقایسه کانال‌ها؛ بدون ریتارگتینگ محصول و بنر</dd>
+      </dl>
+    </div>
+    <div class="scen rec">
+      <span class="badge">پیشنهاد ما</span>
+      <h4>فاز اول کامل</h4>
+      <div class="bud">۱۰۰ <small>میلیون تومان</small></div>
+      <dl>
+        <dt>کانال‌ها</dt><dd>پین روبیکا و بله · همسان · بنر · ریتارگتینگ · ریتارگتینگ محصول</dd>
+        <dt>هدف</dt><dd>فروش + شناسایی کانال و پیام برتر</dd>
+        <dt>یادگیری</dt><dd>هزینه هر فروش در هر کانال، پیام برتر، نرخ تبدیل صفحه محصول</dd>
+      </dl>
+    </div>
+    <div class="scen">
+      <h4>توسعه (فاز دوم)</h4>
+      <div class="bud">بر اساس نتایج <small></small></div>
+      <dl>
+        <dt>کانال‌ها</dt><dd>افزودن ایتا، سروش‌پلاس، تلگرام، درون‌کانالی، همسان هدفمند و درون‌اپلیکیشن</dd>
+        <dt>هدف</dt><dd>افزایش حجم فروش روی کانال‌های اثبات‌شده</dd>
+        <dt>شرط ورود</dt><dd>هزینه هر فروش در فاز اول در محدوده قابل‌قبول حرز رضوی باشد</dd>
+      </dl>
+    </div>
+  </div>
+  <p class="muted" style="font-size:13px;margin-top:12px">ارقام بودجه به میلیون تومان است. پیش‌بینی تعداد فروش یا هزینه هر فروش پیش از اجرا ارائه نمی‌شود؛ این اعداد در هفته اول کمپین و از داده واقعی به دست می‌آیند.</p>
+</section>
+
+<!-- 8 -->
+<section id="creative">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۸</span></div><h2>اصول محتوا و پیام</h2></div>
+  <p>در محصولی با ماهیت معنوی، لحن پیام به اندازه انتخاب کانال اهمیت دارد. پیشنهاد ما این اصول است:</p>
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">آنچه پیام را قوی می‌کند</h3>
+      <ul class="clean">
+        <li>ذکر منبع دعا و توضیح کوتاه درباره آن</li>
+        <li>تصویر واقعی و باکیفیت از محصول</li>
+        <li>قیمت و شیوه ارسال روشن</li>
+        <li>لحن محترمانه و آرام، هماهنگ با فضای محصول</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">آنچه باید از آن پرهیز کرد</h3>
+      <ul class="clean">
+        <li>وعده قطعی یا تضمین نتیجه (مثلاً «تضمین افزایش درآمد»)</li>
+        <li>فوریت‌سازی مصنوعی و لحن فروشنده‌گونه</li>
+        <li>استفاده از تصاویر یا عبارات مقدس به شکل نامناسب در قالب‌های کوچک بنری</li>
+      </ul>
+    </div>
+  </div>
+  <h3>سه زاویه پیام برای آزمون</h3>
+  <div class="grid g3">
+    <div class="stat"><div class="l" style="font-weight:700;color:var(--teal-900)">معرفت و منبع</div><div class="s" style="font-size:13px">تأکید بر اصالت دعا، منبع و شرح آن</div></div>
+    <div class="stat"><div class="l" style="font-weight:700;color:var(--teal-900)">برکت در زندگی و کار</div><div class="s" style="font-size:13px">ارتباط با دغدغه رزق حلال و برکت</div></div>
+    <div class="stat"><div class="l" style="font-weight:700;color:var(--teal-900)">هدیه معنوی</div><div class="s" style="font-size:13px">پیشنهاد محصول به‌عنوان هدیه برای عزیزان</div></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="kpi">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۹</span></div><h2>شاخص‌های عملکرد</h2></div>
+  <div class="tbl-scroll">
+  <table class="tbl">
+    <thead><tr><th>سطح</th><th>شاخص اصلی</th><th>شاخص‌های تکمیلی</th></tr></thead>
+    <tbody>
+      <tr><td><b>کل کمپین</b></td><td>تعداد فروش و هزینه هر فروش (CPA)</td><td>بازگشت هزینه تبلیغات (ROAS)، ارزش میانگین سفارش</td></tr>
+      <tr><td><b>پین روبیکا و بله</b></td><td>هزینه هر ورود به سایت</td><td>نرخ کلیک (CTR)، نرخ تبدیل ورودی‌ها به خرید</td></tr>
+      <tr><td><b>همسان و بنری</b></td><td>هزینه هر کلیک (CPC)</td><td>زمان ماندن در صفحه، نرخ پرش، اندازه مخاطب ریتارگتینگ</td></tr>
+      <tr><td><b>ریتارگتینگ و ریتارگتینگ محصول</b></td><td>هزینه هر فروش</td><td>نرخ تبدیل، بازگشت کاربران سبد رهاشده</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note" style="margin-top:14px">اهداف عددی هر شاخص پس از هفته اول و بر اساس داده واقعی (خط مبنا) با حرز رضوی تعیین می‌شود. برای تعریف «هزینه هر فروش قابل‌قبول» به قیمت فروش و حاشیه سود محصول نیاز داریم.</div>
+</section>
+
+<!-- 10 -->
+<section id="tracking">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۱۰</span></div><h2>سنجش و ردیابی</h2></div>
+  <p>پیش از شروع کمپین، این موارد باید آماده باشد:</p>
+  <div class="steps">
+    <div class="st"><div><b>نصب کد ردیابی یکتانت روی سایت</b><br><span class="muted" style="font-size:14px">پیش‌نیاز ریتارگتینگ و ثبت خریدها؛ با تعریف رویداد خرید در صفحه تأیید سفارش.</span></div></div>
+    <div class="st"><div><b>اتصال فهرست محصولات</b><br><span class="muted" style="font-size:14px">پیش‌نیاز ریتارگتینگ محصول، برای نمایش خودکار محصول دیده‌شده و محصولات مکمل.</span></div></div>
+    <div class="st"><div><b>لینک‌گذاری UTM برای هر کانال</b><br><span class="muted" style="font-size:14px">تا فروش هر کانال جدا دیده شود؛ نمونه: <code>utm_source=rubika&amp;utm_medium=pin&amp;utm_campaign=doa-rizq</code></span></div></div>
+    <div class="st"><div><b>صفحه فرود اختصاصی محصول</b><br><span class="muted" style="font-size:14px">صفحه‌ای با منبع دعا، تصاویر واقعی، قیمت و دکمه خرید روشن؛ همه کانال‌ها به همین صفحه هدایت می‌شوند.</span></div></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="optimize">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۱۱</span></div><h2>برنامه بهینه‌سازی</h2></div>
+  <div class="grid g3">
+    <div class="card"><h3 style="margin-top:0">پیام</h3><p style="font-size:14px;margin:0">اجرای هم‌زمان سه زاویه پیام در هر کانال؛ کنار گذاشتن پیام ضعیف‌تر از پایان هفته اول.</p></div>
+    <div class="card"><h3 style="margin-top:0">کانال</h3><p style="font-size:14px;margin:0">انتقال بودجه از کانال کم‌بازده به کانال پربازده بر اساس هزینه هر فروش، از هفته دوم.</p></div>
+    <div class="card"><h3 style="margin-top:0">صفحه فرود</h3><p style="font-size:14px;margin:0">اگر ورودی زیاد و فروش کم باشد، مشکل در صفحه محصول است؛ پیشنهادهای اصلاحی ارائه می‌شود.</p></div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="timeline">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۱۲</span></div><h2>زمان‌بندی فاز اول</h2></div>
+  <div class="tl">
+    <div class="tli"><div class="w">پیش از شروع</div><h4>آماده‌سازی</h4><p>نصب کد ردیابی، اتصال محصولات، آماده‌سازی متن و تصویر تبلیغات، تأیید صفحه فرود.</p></div>
+    <div class="tli"><div class="w">هفته اول</div><h4>اجرا و یادگیری</h4><p>اجرای همه کانال‌ها با بودجه متعادل؛ ثبت خط مبنای شاخص‌ها.</p></div>
+    <div class="tli"><div class="w">هفته دوم</div><h4>بهینه‌سازی اول</h4><p>گزارش میانی، حذف پیام ضعیف، اولین جابه‌جایی بودجه بین کانال‌ها.</p></div>
+    <div class="tli"><div class="w">هفته سوم و چهارم</div><h4>تمرکز بر کانال برتر</h4><p>افزایش سهم کانال و پیام برتر؛ تقویت ریتارگتینگ با رشد مخاطب سایت.</p></div>
+    <div class="tli"><div class="w">پایان فاز اول</div><h4>گزارش و تصمیم فاز دوم</h4><p>گزارش کامل عملکرد هر کانال و پیشنهاد بودجه و ترکیب فاز دوم.</p></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="phase2">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۱۳</span></div><h2>فاز دوم: توسعه</h2></div>
+  <p>در صورت دستیابی به هزینه هر فروش قابل‌قبول در فاز اول، این ظرفیت‌ها برای افزایش حجم فروش پیشنهاد می‌شود:</p>
+  <div class="tbl-scroll">
+  <table class="tbl">
+    <thead><tr><th>اولویت</th><th>سرویس</th><th>نقش در توسعه</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pri pC">C</span></td><td><b>پین پیام‌رسان ایتا و سروش‌پلاس</b></td><td>گسترش دسترسی به سایر پیام‌رسان‌های داخلی با مخاطب نزدیک به محصول</td></tr>
+      <tr><td><span class="pri pC">C</span></td><td><b>تبلیغات درون‌کانالی (بله، روبیکا، ایتا، سروش‌پلاس، تلگرام)</b></td><td>حضور در کانال‌های مذهبی و فرهنگی هم‌سو با محصول</td></tr>
+      <tr><td><span class="pri pC">C</span></td><td><b>تبلیغات همسان هدفمند</b></td><td>هدف‌گیری موضوعی، کلیدواژه‌ای و رفتارمحور برای ترافیک دقیق‌تر</td></tr>
+      <tr><td><span class="pri pC">C</span></td><td><b>تبلیغات درون اپلیکیشن</b></td><td>دسترسی به مخاطب در بیش از ۷۰۰۰ اپلیکیشن ایرانی</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note gold" style="margin-top:14px"><b>زمان‌بندی پیشنهادی:</b> شروع فاز دوم پیش از مناسبت‌های مرتبط با امیرالمؤمنین (ع)، به‌ویژه ۱۳ رجب، تا کمپین با بیشترین توجه مخاطب هم‌زمان شود.</div>
+</section>
+
+<!-- 14 -->
+<section id="next">
+  <div class="sec-head"><div class="sec-num"><svg><use href="#star8"/></svg><span>۱۴</span></div><h2>گام‌های بعدی</h2></div>
+  <div class="steps">
+    <div class="st"><div><b>تأیید ترکیب و بودجه فاز اول</b> از سوی حرز رضوی</div></div>
+    <div class="st"><div><b>ارسال اطلاعات محصول</b> — قیمت، تصاویر، منبع دعا و حاشیه سود هدف</div></div>
+    <div class="st"><div><b>نصب کد ردیابی و اتصال محصولات</b> با پشتیبانی فنی یکتانت</div></div>
+    <div class="st"><div><b>جلسه شروع</b> برای تأیید پیام‌ها و صفحه فرود</div></div>
+    <div class="st"><div><b>آغاز کمپین</b> و ارسال گزارش میانی در پایان هفته دوم</div></div>
+  </div>
+
+  <div class="closing">
+    <div class="ornament"></div>
+    <p>با آرزوی رزق حلال و پربرکت</p>
+    <small>تیم فروش یکتانت</small>
+  </div>
+</section>
+
+</div>
+</main>
+</div>
+
+<script>
+(function(){
+  // decorative patterns as CSS vars (8-point star tile + gold rule)
+  var star = function(c){return "url(\"data:image/svg+xml;utf8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><g fill="none" stroke="'+c+'" stroke-width="1.2"><rect x="16" y="16" width="24" height="24"/><rect x="16" y="16" width="24" height="24" transform="rotate(45 28 28)"/><path d="M0 28h4M52 28h4M28 0v4M28 52v4"/></g></svg>')+"\")";};
+  var rule = "url(\"data:image/svg+xml;utf8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="44" height="22" viewBox="0 0 44 22"><path d="M0 11h12M32 11h12" stroke="#B68A3E" stroke-width="1"/><path d="M22 3l8 8-8 8-8-8z" fill="none" stroke="#B68A3E" stroke-width="1.2"/><circle cx="22" cy="11" r="2" fill="#B68A3E"/></svg>')+"\")";
+  var r = document.documentElement.style;
+  r.setProperty('--star-pattern', star('#D9BE85'));
+  r.setProperty('--star-pattern-teal', star('#0F5259'));
+  r.setProperty('--rule-gold', rule);
+
+  // active nav
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav a'));
+  var map = {}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ links.forEach(function(l){l.classList.remove('active')}); var a=map[e.target.id]; if(a) a.classList.add('active'); }
+      });
+    },{rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('section[id]').forEach(function(s){io.observe(s)});
+  }
+
+  // mobile menu
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', function(){ var o = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', o); });
+  links.forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }); });
+})();
+</script>
+</body>
+</html>
